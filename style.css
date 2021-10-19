@@ -1,0 +1,197 @@
+/* css variables */
+:root {
+  --primary: #ddd;
+  --dark: #2d2d2d;
+  --light: #fff;
+  --shadow: rgb(231, 231, 231);
+}
+
+html {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+body {
+  margin: 1rem 8rem;
+  line-height: 1.4;
+}
+
+.btn {
+  background-color: var(--dark);
+  color: var(--light);
+  padding: 0.6rem 1.3rem;
+  text-decoration: none;
+  border-radius: 7px;
+  border: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+.wrapper {
+  display: grid;
+}
+
+.main-nav ul {
+  display: grid;
+  grid-gap: 20px;
+  padding: 0;
+  list-style: none;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.main-nav a {
+  background-color: var(--primary);
+  display: block;
+  text-decoration: none;
+  padding: 0.8rem;
+  text-align: center;
+  color: var(--dark);
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  box-shadow: 5px 5px 15px var(--shadow);
+  border-radius: 7px;
+}
+
+.main-nav a:hover {
+  background-color: var(--dark);
+  color: var(--light);
+}
+
+/* Top Container */
+
+.top-container {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-areas:
+    "showcase showcase top-box-a"
+    "showcase showcase top-box-b";
+}
+
+.showcase {
+  grid-area: showcase;
+  min-height: 400px;
+  background-image: url("img/hero.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 3rem;
+  color: var(--light);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.showcase h1 {
+  font-size: 3rem;
+  margin-bottom: 0;
+}
+.showcase p {
+  font-size: 1.3rem;
+  margin-top: 0;
+}
+/* TOP BOX */
+.top-box {
+  background-color: var(--primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  padding: 1.5rem;
+}
+.top-box .price {
+  font-size: 2rem;
+}
+.top-box-a {
+  grid-area: top-box-a;
+}
+.top-box-b {
+  grid-area: top-box-b;
+}
+
+/* boxes */
+.boxes {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  margin: 2rem 0;
+}
+
+.box {
+  background-color: var(--primary);
+  text-align: center;
+  padding: 1.3rem 1.7rem;
+}
+
+/* info */
+.info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 30px;
+  margin-bottom: 2rem;
+  background-color: var(--shadow);
+  padding: 1rem;
+}
+
+/* portfolio */
+.portfolio {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  margin-bottom: 2rem;
+}
+
+.portfolio img {
+  width: 100%;
+}
+
+/* footer */
+footer {
+  margin-top: 2rem;
+  background-color: var(--dark);
+  text-align: center;
+  color: var(--light);
+}
+
+/* media queries */
+@media (max-width: 700px) {
+  body {
+    margin: 1rem 2rem;
+    line-height: 1.4;
+  }
+
+  .top-container {
+    grid-template-areas:
+      "showcase showcase"
+      "top-box-a top-box-b";
+  }
+
+  .showcase h1 {
+    font-size: 2.5rem;
+  }
+
+  .main-nav ul {
+    grid-template-columns: 1fr;
+  }
+  .info {
+    grid-template-columns: 1fr;
+  }
+  .info .btn{
+    display: block;
+    text-align: center;
+    margin: auto;
+  }
+}
+
+@media (max-width: 500px) {
+.top-container{
+  grid-template-areas: 
+  "showcase"
+  "top-box-a"
+  "top-box-b"
+  ;
+}
+}
